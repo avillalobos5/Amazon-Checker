@@ -19,13 +19,16 @@ def check_price():
     converted_price_string = price[1:7]
     converted_price = float(converted_price_string.replace(',',''))
 
-    if(converted_price) < 350):
+    if(converted_price < 350):
         send_mail()
 
 
     print(converted_price)
     print(title.strip(), price.strip())
     #print (soup)
+
+    if(converted_price < 350):
+        send_mail()
 
 def send_mail():
     server = smtplib.SMTP('smtp.gmail.com', 587)
@@ -39,7 +42,15 @@ def send_mail():
     body = 'Check the amazon link https://www.amazon.com/New-Apple-Watch-GPS-40mm/dp/B08KGVJQC8/ref=sr_1_5?dchild=1&keywords=apple+watch+series+6&qid=1627926465&sr=8-5'
 
     msg = f"Subject: {subject}\n\n{body}"
+
     server.sendmail(
-        'avillalobos.code',
+        'avillalobos.code@gmail.com',
+        'angel_villalobos5@yahoo.com',
+        msg
 
     )
+    print('Email Sent out')
+
+    server.quit()
+
+check_price()
