@@ -36,7 +36,9 @@ def send_mail():
     server.starttls()
     server.ehlo()
 
-    server.login('avillalobos.code', 'spixixurrrryqwky')
+    server.login('avillalobos.code', 
+                 # 'password here'
+                )
 
     subject = 'Price fell down!'
     body = 'Check the amazon link https://www.amazon.com/New-Apple-Watch-GPS-40mm/dp/B08KGVJQC8/ref=sr_1_5?dchild=1&keywords=apple+watch+series+6&qid=1627926465&sr=8-5'
