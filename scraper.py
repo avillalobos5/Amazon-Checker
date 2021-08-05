@@ -55,4 +55,6 @@ def send_mail():
 
     server.quit()
 
-check_price()
+while True:
+    check_price()
+    time.sleep(60 * 60 * 12)
